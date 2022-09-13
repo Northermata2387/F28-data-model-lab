@@ -1,0 +1,120 @@
+Features
+users can sign into the app with their email and password
+
+users can create recipes with ingredients and instructions
+
+recipes can be marked as public or private
+
+users can view other people’s recipes
+
+ingredients from recipes can be added to user’s grocery lists
+
+users can create their own occasions and assign recipes to occasions
+
+
+
+Part 1: Step 1: 
+Brainstorming
+ 
+MVP:
+user
+app
+email
+password
+verified
+recipe
+ingredients
+instructions
+public
+private
+view recipes
+likes
+review
+Grocery List
+Ocassions
+
+
+
+Part 1: Step 2:
+Table Ideas
+
+users:  contain all details about the user
+
+Step 4: (verified: verify a unique user)
+
+recipes: contain the name, ingredients, instructions for a recipe, post reviews, and a public or private option.
+
+ingredients: list of the ingredients in the recipe
+
+instructions: list of instructions for the recipe
+
+Step 4: (likes: a boolean value for the likes the recipe has received)
+
+review: a place where users can write a review of the recipe 
+
+grocery list: display the ingreient list for a recipe
+
+occasions: show th ocassion and recipe name for that ocassion. 
+
+
+
+Part 1: Step 3:
+Relationships
+  “one-to-one”: 
+  ingredients
+  users
+  likes
+  reviews
+  verified
+
+  “one-to-many”:
+  ocassions
+  Recipe-Ingredients
+  grocery list 
+
+  “many-to-many”:
+  recipes
+
+
+Part 2: Step 2:
+
+  ingredients
+  users
+    userName varchar(24) - name of user limit 24 characters
+    password text -  to create a password (open to salt)
+    email	varchar(24) - email address for user
+
+  likes
+    likes	boolean	- true or false
+
+  reviews
+    	review varchar(300)	- review with a limit of 300 characters
+
+  verified
+   date (date the user was verified)
+
+  grocery list
+   None
+
+  ocassions
+    	ocassionName	varchar(24)	- name of the ocassion limit 24 characters
+
+  Recipe-Ingredients
+   None
+
+   ingredients	
+    listIngredients	text - List of ingredients that can be added to the recipe.
+
+  recipes
+    date-time	datetime - The recipe was posted
+    public/private boolean - If the recipe can be viewd by other users with true or false
+    recipeName varchar(24) - name of recipe limit 24 characters
+    instructions varchar(300)	- instructions for recipe limit 300 characters
+
+
+
+
+
+
+
+
